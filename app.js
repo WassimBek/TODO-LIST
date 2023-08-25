@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let listData = [];
 
 app.get("/", (req, res) => {
-  res.render("todo", { data: listData, webtitle: "TODO" });
+  res.render("index", { data: listData, webtitle: "TODO" });
 });
 
 app.get("/add", (req, res) => {
@@ -30,7 +30,6 @@ app.post("/add", (req, res) => {
 
 app.get("/update/:id" , (req , res) => {
   const {id} = req.params 
-  console.log(id)
   res.render("update" , {webtitle : "Update TODO" , data : listData.at(id - 1)})
 })
 
@@ -50,8 +49,8 @@ app.post("/delete/:id", (req, res) => {
 
 
 
+const PORT = 3000 
 
-
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("server is working at port 3000"); 
 });
