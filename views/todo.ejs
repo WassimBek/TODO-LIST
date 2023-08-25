@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/header.ejs") %>
+  </head>
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <main>
+      <% data.forEach(idData=>{ %>
+      <div class="list">
+        <h1><%= idData.title%></h1>
+        <div class="data-check data-<%= idData.id %>">
+          <input
+            onclick='selectedBox("<%= idData.id %>")'
+            type="checkbox"
+            id="<%= idData.id %>"
+          />
+          <label for="<%= idData.id %>"><%= idData.content %></label>
+        </div>
+        <div class="form-del-update">
+          <form action="/delete/<%=idData.id%>" method="POST">
+          <button>Remove</button>
+        </form>
+        <form action="/update/<%= idData.id %>">
+          <button>update</button>
+        </form>
+      </div>
+        </div>
+        
+      <%})%>
+    </main>
+    <footer>
+      <form action="/add">
+        <a href="/add">Add Note</a>
+      </form>
+    </footer>
+
+    <script>
+      const selectedBox = (dataId) => {
+        const checkbox = document.getElementById(dataId);
+        const label = document.querySelector(`.data-${dataId} label`);
+        if (checkbox.checked) 
+          label.style.textDecoration = "line-through";
+        else 
+          label.style.textDecoration = "none";
+        
+      };
+    </script>
+  </body>
+</html>

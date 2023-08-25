@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/header.ejs") %>
+    <link rel="stylesheet" href="/add.css">
+</head>
+<body>
+    <%- include("./partials/nav.ejs") %>
+    <div>
+        <h1>Update Your Note</h1>
+        <form method="POST">
+            <input type="text" name="title" required placeholder="Enter The Title" value="<%= data.title %>">
+            <textarea name="content" required cols="30" rows="10" placeholder="Enter Contents"><%= data.content%></textarea>
+            <button type="submit" >update</button>
+        </form>
+    </div>
+</body>
+</html>
+

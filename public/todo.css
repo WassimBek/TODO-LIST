@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255, 242, 148, 1);
+
+    & > nav {
+        width: 100%;
+        background-color: rgba(255, 232, 51, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > a {
+            text-decoration: none;
+            color: #2f2100;
+        }
+    }
+
+    & > main {
+        width: 100%;
+        height: auto;
+        & > .list {
+            background-color: rgba(255, 232, 51, 1);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            margin: 10px 90px;
+            border-radius: 4px;
+            padding: 0px 20px;
+            height: auto;
+            & > h1 {
+                text-align: center;
+                width: 100%;
+            }
+            & > .data-check {
+                    word-wrap: break-word ;
+                    display: flex;
+                    align-items: center;
+                    padding:0px 10px;
+                    max-width: 100%;
+                    & > input {
+                        accent-color: rgba(62, 57, 30, 1);
+                        margin-right: 10px;
+                    }
+                    & > label {
+                        font-weight: 500;
+                        color: #2f2100;
+                        font-size: 20px;
+                        max-width: 100%;
+                    }
+
+                }
+                &>.form-del-update{
+                    display: flex;
+                    & form  > button  {
+                    background-color: rgba(255, 242, 148, 1);
+                    padding: 10px 20px;
+                    margin-top: 25px;
+                    font-size: 1.2rem;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    margin-right:10px;
+                }
+                }
+                
+                
+                
+            }
+        }
+
+        & > footer {
+            text-align: center;
+            margin-top: 2%;
+            & > form > a{
+            background-color: rgba(255, 232, 51, 1);
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #2f2100;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (max-width : 450px) {
+    main {
+        margin-bottom: 5%;
+      &  .form-del-update{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    }
+    
+}
